@@ -42,32 +42,24 @@
 
     <!-- Main Container --><div id="app" class="min-h-screen flex flex-col">
 
-        <!-- Header --><header class="bg-white shadow-md p-4 sticky top-0 z-10">
+        <!-- Header (Simplified) --><header class="bg-white shadow-md p-4 sticky top-0 z-10">
             <h1 class="text-2xl md:text-3xl font-bold text-primary-purple text-center tracking-tight">
-                Australian Privacy Principles (APPs)
+                Australian Privacy Principles Quick Reference
             </h1>
-            <p class="text-center text-sm text-gray-500 mt-1">Quick Reference for Dental Assistants</p>
         </header>
 
-        <!-- Introductory Text --><section class="p-6 bg-white border-b border-gray-200">
-            <p class="max-w-4xl mx-auto text-gray-700 leading-relaxed text-sm md:text-base">
-                Dental practices are considered "health service providers" and must comply with the
-                <strong class="font-semibold">Privacy Act 1988</strong>, which contains the Australian Privacy Principles (APPs).
-                These principles dictate how personal information, particularly sensitive information (like a patient's
-                health and medical history), must be handled.
-            </p>
-        </section>
+        <!-- Introductory Text SECTION REMOVED -->
 
         <!-- Content Area: Sidebar and Main View --><main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 flex flex-col md:flex-row gap-6">
 
-            <!-- Sidebar (APP Navigation) --><aside id="app-sidebar" class="md:w-1/3 lg:w-1/4 bg-custom-bg rounded-xl shadow-lg border border-gray-200 p-3 md:sticky md:top-24 h-auto md:max-h-[70vh] custom-scrollbar overflow-y-auto">
-                <!-- Changed 'APP Index' to 'Principle' --><h2 class="text-lg text-gray-700 p-2 mb-2 border-b">Principle</h2>
+            <!-- Sidebar (APP Navigation) --><aside id="app-sidebar" class="md:w-1/3 lg:w-1/4 bg-custom-bg rounded-xl shadow-lg border border-gray-200 p-3 md:sticky md:top-10 h-auto md:max-h-[85vh] custom-scrollbar overflow-y-auto">
+                <h2 class="text-lg text-gray-700 p-2 mb-2 border-b">Principle</h2>
                 <!-- APP list will be rendered here by JavaScript --></aside>
 
             <!-- Main Content (APP Details) --><section id="app-content-area" class="md:w-2/3 lg:w-3/4 bg-custom-bg rounded-xl shadow-lg border border-gray-200 p-6">
-                <!-- UPDATED: Changed font-extrabold to font-bold and text-gray-800 to text-primary-purple --><h2 id="content-title" class="text-2xl font-bold text-primary-purple mb-4"></h2>
+                <h2 id="content-title" class="text-2xl font-bold text-primary-purple mb-4"></h2>
                 <div id="content-body" class="text-gray-600 space-y-4 leading-loose">
-                    <!-- Updated fallback text to mention "Principle" --><p class="text-lg font-medium text-gray-500">
+                    <p class="text-lg font-medium text-gray-500">
                         Select an Australian Privacy Principle from the left-hand panel (Principle) to view its key requirement for dental assistants.
                     </p>
                 </div>
