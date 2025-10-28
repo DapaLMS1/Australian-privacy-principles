@@ -6,7 +6,7 @@
     <title>APP Quick Reference Guide</title>
     <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom scrollbar styling */
+        /* Custom scrollbar styling (retained for future use but not currently active on sidebar) */
         .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
         }
@@ -27,11 +27,12 @@
                     },
                     colors: {
                         // Mapped Colors from user request
-                        'custom-bg': '#F2F2F2',          // Lightest gray/white alternative
+                        'custom-bg': '#FFFFFF',          /* Changed to White */
                         'primary-purple': '#532A8C',     // Deep Purple (Main Accent)
                         'light-lavender': '#C3ACE8',     // Light Lavender (Light BG/Hover)
                         'muted-purple': '#9D8ABB',       // Muted Purple (Subtle Accent/Hover BG)
                         'accent-green': '#7ABF49',       // Vibrant Green (Unused, available for future buttons/success)
+                        'panel-bg': '#F2F2F2',           /* New: Light Grey for panels */
                     }
                 }
             }
@@ -42,35 +43,28 @@
 
     <!-- Main Container --><div id="app" class="min-h-screen flex flex-col">
 
-        <!-- Header (Simplified) --><header class="bg-white shadow-md p-4 sticky top-0 z-10">
+        <!-- Header (Title removed) --><header class="p-4 sticky top-0 z-10">
             <h1 class="text-2xl md:text-3xl font-bold text-primary-purple text-center tracking-tight">
-                Australian Privacy Principles Quick Reference
+                
             </h1>
         </header>
 
-        <!-- Introductory Text SECTION REMOVED -->
-
         <!-- Content Area: Sidebar and Main View --><main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 flex flex-col md:flex-row gap-6">
 
-            <!-- Sidebar (APP Navigation) --><aside id="app-sidebar" class="md:w-1/3 lg:w-1/4 bg-custom-bg rounded-xl shadow-lg border border-gray-200 p-3 md:sticky md:top-10 h-auto md:max-h-[85vh] custom-scrollbar overflow-y-auto">
-                <h2 class="text-lg text-gray-700 p-2 mb-2 border-b">Principle</h2>
+            <!-- Sidebar (APP Navigation) - Max height constraint removed and width set to 1/3 --><aside id="app-sidebar" class="w-full md:w-1/3 bg-panel-bg rounded-xl shadow-lg border border-gray-200 p-3 md:sticky md:top-10 h-auto">
+                <!-- Title styling retained for consistency --><h2 class="text-2xl font-bold text-primary-purple p-2 mb-2 border-b">Principle</h2>
                 <!-- APP list will be rendered here by JavaScript --></aside>
 
-            <!-- Main Content (APP Details) --><section id="app-content-area" class="md:w-2/3 lg:w-3/4 bg-custom-bg rounded-xl shadow-lg border border-gray-200 p-6">
-                <h2 id="content-title" class="text-2xl font-bold text-primary-purple mb-4"></h2>
+            <!-- Main Content (APP Details) - Width set to 2/3 --><section id="app-content-area" class="w-full md:w-2/3 bg-panel-bg rounded-xl shadow-lg border border-gray-200 p-6">
+                <!-- ADDED p-2, mb-2, and border-b for consistency with the sidebar. Replaced mb-4 with mb-2 --><h2 id="content-title" class="text-2xl font-bold text-primary-purple p-2 mb-2 border-b"></h2>
                 <div id="content-body" class="text-gray-600 space-y-4 leading-loose">
-                    <p class="text-lg font-medium text-gray-500">
-                        Select an Australian Privacy Principle from the left-hand panel (Principle) to view its key requirement for dental assistants.
-                    </p>
-                </div>
+                    <!-- Removed fallback text content --></div>
             </section>
 
         </main>
 
-        <!-- Footer --><footer class="p-4 bg-white mt-8 shadow-inner border-t border-muted-purple">
-            <p class="text-center text-primary-purple text-sm font-medium">
-                &copy; 2025 Privacy Reference Guide. Based on Australian Privacy Act 1988.
-            </p>
+        <!-- Footer (Text and border removed) --><footer class="p-4 mt-8">
+            
         </footer>
 
     </div>
@@ -94,7 +88,8 @@
                 iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`, // UserPlus - Collection
                 content: "Only collect information that is reasonably necessary for the dental practice's functions (e.g., diagnosis, treatment, billing).",
                 example: "...remind patients to stick to mandatory health and contact details when they include non-essential information (like their favourite football team) on a new patient form, as it is not necessary for dental care.",
-                oaicUrl: 'https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-3-app-3-collection-of-solicited-personal-information', // UPDATED
+                // Corrected APP 3 URL
+                oaicUrl: 'https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-3-app-3-collection-of-solicited-personal-information',
             },
             {
                 id: 6,
@@ -102,8 +97,8 @@
                 title: "Use or Disclosure of Personal Information",
                 iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>`, // Share2 - Use/Disclosure
                 content: "Patient information must only be used or disclosed for the primary purpose it was collected for (e.g., providing dental care) or a directly related secondary purpose the patient would reasonably expect. Explicit written consent is generally required for other disclosures.",
-                example: "...politely state that you cannot confirm any patient's presence or disclose their information to a friend who calls and asks about them, as explicit permission is required.",
                 oaicUrl: 'https://www.oaic.gov.au/privacy/australian-privacy-principles/australian-privacy-principles-guidelines/chapter-6-app-6-use-or-disclosure-of-personal-information', // UPDATED
+                example: "...politely state that you cannot confirm any patient's presence or disclose their information to a friend who calls and asks about them, as explicit permission is required.",
             },
             {
                 id: 10,
@@ -172,8 +167,10 @@
                         ${app.iconSvg}
                     </div>
                     <div class="flex-grow">
-                        <span class="font-bold text-sm">${app.appNumber}</span>
-                        <p class="text-xs leading-tight">${app.title}</p>
+                        <!-- APP Number is now text-base (16px) -->
+                        <span class="font-bold text-base">${app.appNumber}</span>
+                        <!-- Title is now text-sm (14px) for better visual balance -->
+                        <p class="text-sm leading-snug">${app.title}</p>
                     </div>
                 `;
 
@@ -221,8 +218,7 @@
                 // Multiple link case (APP 12 & 13)
                 linkHtml = app.oaicUrls.map(link => `
                     <a href="${link.url}" target="_blank" rel="noopener noreferrer" title="View official guidance: ${link.title}" class="flex items-center group">
-                        <!-- Show title on larger screens only -->
-                        <span class="text-xs font-medium text-primary-purple mr-1 group-hover:underline hidden sm:inline">${link.title.replace('(APP 12)', '').replace('(APP 13)', '').trim()}</span>
+                        <!-- Show title on larger screens only --><span class="text-xs font-medium text-primary-purple mr-1 group-hover:underline hidden sm:inline">${link.title.replace('(APP 12)', '').replace('(APP 13)', '').trim()}</span>
                         ${linkIconSvg}
                     </a>
                 `).join('');
@@ -231,7 +227,8 @@
 
             // New structure to include both the Key Requirement and the Example
             bodyElement.innerHTML = `
-                <!-- Key Requirement --><div class="bg-light-lavender p-4 md:p-6 rounded-xl border-l-4 border-primary-purple shadow-inner mb-6">
+                <!-- Key Requirement - Dark purple border retained -->
+                <div class="bg-light-lavender p-4 md:p-6 rounded-xl border-4 border-primary-purple shadow-inner mb-6">
                     <h3 class="text-lg md:text-xl font-bold text-primary-purple mb-2 flex justify-between items-center">
                         <span>Key Requirement for Dental Assistants</span>
                         <div class="flex items-center space-x-2">
@@ -243,9 +240,10 @@
                     </p>
                 </div>
 
-                <!-- Example for Student --><!-- Styled with the custom background and muted border for contrast --><div class="bg-white p-4 md:p-6 rounded-xl border border-muted-purple shadow-md">
+                <!-- Example for Student: Classes updated to match the Key Requirement border (border-4, border-primary-purple, shadow-inner) -->
+                <div class="bg-white p-4 md:p-6 rounded-xl border-4 border-primary-purple shadow-inner">
                     <h3 class="text-lg font-bold text-primary-purple mb-2 flex items-center">
-                        <!-- Icon for Example/Action --><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-muted-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <!-- Icon color updated to primary-purple for consistency --><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-primary-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         As a dental assistant you will...
