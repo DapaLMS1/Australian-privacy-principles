@@ -1,4 +1,4 @@
-Australian Privacy Principles (APPs) Quick Reference Guide
+Australian Privacy Principles (APPs) Quick Reference Guide 
 
 🦷 Project Overview
 
